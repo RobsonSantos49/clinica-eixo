@@ -15,6 +15,7 @@ window.SITE = {
 
   frames: {
     total: 160, // valor impresso pelo fatiar_frames.sh
+    totalMobile: 80, // celular: quadros verticais 540x960, um a cada dois
     desktop: "assets/frames/desktop/f_{n}.webp",
     mobile: "assets/frames/mobile/f_{n}.webp",
   },

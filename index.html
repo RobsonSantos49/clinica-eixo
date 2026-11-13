@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
+  <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp" media="(min-width: 761px)">
+  <link rel="preload" as="image" href="assets/frames/mobile/f_0001.webp" media="(max-width: 760px)">
   <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -24,15 +25,23 @@
     <img class="marca-logo" src="assets/logo/logo.webp" alt="" width="40" height="40">
     <span class="marca-texto">Clínica Eixo</span>
   </a>
-  <nav class="menu" aria-label="Seções">
+  <nav class="menu" id="menu" aria-label="Seções">
     <a href="#inicio" class="menu-inicio">Início</a>
     <a href="#sobre">Sobre</a>
     <a href="#profissionais">Profissionais</a>
     <a href="#servicos">Serviços</a>
     <a href="#artigos">Artigos</a>
+    <a href="#depoimentos" class="menu-so-celular">Depoimentos</a>
     <a href="#convenios">Convênios</a>
+    <a href="#contato" class="menu-so-celular">Contato</a>
     <a href="#contato" class="menu-cta">Agendar</a>
   </nav>
+  <div class="topo-acoes">
+    <a href="#contato" class="menu-cta">Agendar</a>
+    <button type="button" class="menu-botao" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+      <span></span><span></span>
+    </button>
+  </div>
 </header>
 
 <main>

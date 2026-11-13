@@ -9,7 +9,7 @@
   const canvas = cine && cine.querySelector(".cine-canvas");
   if (cine && canvas && S.frames && S.frames.total) {
     const ctx = canvas.getContext("2d");
-    const total = S.frames.total;
+    const total = (celular && S.frames.totalMobile) || S.frames.total;
     const padrao = celular ? S.frames.mobile : S.frames.desktop;
     const src = (i) => padrao.replace("{n}", String(i + 1).padStart(4, "0"));
     const quadros = new Array(total);
@@ -27,7 +27,7 @@
 
     // Carrega em passadas (1 a cada 8, depois 1 a cada 4…) para cobrir o filme inteiro cedo
     carregar(0);
-    if (!reduzir) {
+    {
       const fila = [];
       for (const passo of [8, 4, 2, 1]) for (let i = 0; i < total; i += passo) if (!fila.includes(i)) fila.push(i);
       let k = 0;
@@ -79,7 +79,7 @@
 
     const quadro = () => {
       alvo = progresso() * (total - 1);
-      atual += (alvo - atual) * 0.18; // suaviza: sensação de filme, não de slide
+      atual += (alvo - atual) * (reduzir ? 1 : 0.18); // suaviza: sensação de filme, não de slide
       if (Math.abs(alvo - atual) < 0.05) atual = alvo;
       desenhar(Math.round(atual));
       atualizarMomentos(atual / (total - 1));
@@ -88,8 +88,8 @@
 
     addEventListener("resize", ajustar);
     ajustar();
-    if (reduzir) atualizarMomentos(0);
-    else requestAnimationFrame(quadro);
+    // Com "reduzir movimento" o vídeo continua: ele só avança quando a pessoa rola (sem suavização)
+    requestAnimationFrame(quadro);
   }
 
   /* ── Parallax leve nas artes ──────────────────────────────────────────── */
@@ -109,6 +109,20 @@
 
   /* ── Topo, revelar e ano ──────────────────────────────────────────────── */
   const topo = document.querySelector(".topo");
+
+  // Menu do celular (botão ☰)
+  const botaoMenu = document.querySelector(".menu-botao");
+  if (topo && botaoMenu) {
+    const abrir = (sim) => {
+      topo.classList.toggle("aberto", sim);
+      botaoMenu.setAttribute("aria-expanded", String(sim));
+      botaoMenu.setAttribute("aria-label", sim ? "Fechar menu" : "Abrir menu");
+    };
+    botaoMenu.addEventListener("click", () => abrir(!topo.classList.contains("aberto")));
+    topo.querySelectorAll(".menu a").forEach((a) => a.addEventListener("click", () => abrir(false)));
+    addEventListener("keydown", (e) => { if (e.key === "Escape") abrir(false); });
+    document.addEventListener("click", (e) => { if (!topo.contains(e.target)) abrir(false); });
+  }
   const whats = document.querySelector(".whats");
   let formNaTela = false; // o botão flutuante se recolhe para não cobrir o "Enviar"
   const aoRolar = () => {
