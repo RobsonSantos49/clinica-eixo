@@ -340,6 +340,21 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .rodape-painel { max-width: var(--largura); margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; justify-content: space-between; font-size: 14px; color: var(--texto-suave); padding: 24px 32px; }
 .aviso-modelo { flex-basis: 100%; font-size: 12px; opacity: .75; padding-top: 12px; border-top: 1px solid var(--linha); }
 
+/* ── Redes sociais ─────────────────────────────────────────────────────── */
+.redes { list-style: none; margin: 0; padding: 0; display: flex; gap: 10px; }
+.redes a {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center;
+  color: var(--texto); background: rgb(255 255 255 / .6); border: 1px solid var(--linha);
+  transition: background .3s, color .3s, border-color .3s, transform .3s var(--ease);
+}
+.redes a:hover { background: var(--acento); border-color: var(--acento); color: #fff; transform: translateY(-2px); }
+.redes a[data-whats]:hover { background: var(--fisio); border-color: var(--fisio); }
+.redes a:focus-visible { outline: 2px solid var(--acento); outline-offset: 3px; }
+.redes svg { width: 18px; height: 18px; }
+.contato-redes { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 16px; padding: 4px 0 20px; border-bottom: 1px solid var(--linha); margin-bottom: 8px; }
+.contato-redes > span { white-space: nowrap; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); }
+.info { border-bottom: 0; }
+
 /* ── Revelar ao rolar ──────────────────────────────────────────────────── */
 .revelar { opacity: 0; transform: translateY(40px); transition: opacity 1s var(--ease), transform 1.2s var(--ease); }
 .revelar.visto { opacity: 1; transform: none; }

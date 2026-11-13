@@ -13,6 +13,14 @@ window.SITE = {
     assunto: "Novo contato pelo site Clínica Eixo",
   },
 
+  // Redes sociais: cole o endereço do perfil. Deixe "" para esconder o ícone.
+  // EXEMPLO: no site-modelo apontam para a página inicial de cada rede.
+  redes: {
+    instagram: "https://www.instagram.com/",
+    facebook: "https://www.facebook.com/",
+    youtube: "https://www.youtube.com/",
+  },
+
   frames: {
     total: 160, // valor impresso pelo fatiar_frames.sh
     totalMobile: 80, // celular: quadros verticais 540x960, um a cada dois

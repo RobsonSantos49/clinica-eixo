@@ -153,6 +153,13 @@
     });
   }
 
+  /* ── Redes sociais (endereços no config.js) ───────────────────────────── */
+  document.querySelectorAll("[data-rede]").forEach((a) => {
+    const url = (S.redes || {})[a.dataset.rede];
+    if (url) a.href = url;
+    else a.closest("li").remove();
+  });
+
   /* ── Formulário → e-mail ──────────────────────────────────────────────── */
   const form = document.querySelector(".form");
   if (form && S.contato) {
