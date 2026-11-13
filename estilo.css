@@ -353,6 +353,8 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 55%, transparent);
             mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 55%, transparent); }
   .momento, .momento--direita { left: var(--gutter); right: var(--gutter); bottom: 18vh; }
+  .momento--centro { width: auto; max-width: none; transform: translateY(24px); }
+  .momento--centro.ativo { transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
