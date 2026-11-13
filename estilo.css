@@ -150,11 +150,11 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .passos .passo--fisio::before { color: var(--fisio); }
 
 /* Áreas (ortopedia / fisioterapia) */
-.areas { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 8px; padding-top: 24px; border-top: 1px solid var(--linha); }
+.areas { display: grid; gap: 36px; margin-top: 8px; }
+.area { padding-top: 24px; border-top: 1px solid var(--linha); }
 .areas h3 { color: var(--acento); margin-bottom: .3em; }
 .areas .area--fisio h3, .cartao--fisio h3 { color: var(--fisio); }
-.areas p { margin: 0; }
-@media (max-width: 560px) { .areas { grid-template-columns: 1fr; } }
+.areas p { margin: 0 0 18px; }
 
 /* Artigos */
 .artigos { display: grid; margin: 8px 0 18px; border-top: 1px solid var(--linha); }
@@ -174,9 +174,8 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .nota { font-size: 13px; margin: 0; }
 
 /* Equipe */
-.equipe { list-style: none; margin: 28px 0 0; padding: 24px 0 0; border-top: 1px solid var(--linha); display: grid; grid-template-columns: 1fr; gap: 0; }
-.equipe li { display: grid; grid-template-columns: 52px 1fr auto; column-gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--linha); }
-.equipe li:first-child { padding-top: 0; }
+.equipe { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+.equipe li { display: grid; grid-template-columns: 52px 1fr auto; column-gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--linha); }
 .equipe li:last-child { border-bottom: 0; padding-bottom: 0; }
 .equipe-foto {
   grid-row: span 2; width: 52px; height: 52px; border-radius: 50%; object-fit: cover;
