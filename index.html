@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica Eixo · Ortopedia e Fisioterapia</title>
+  <meta name="description" content="Clínica de ortopedia e fisioterapia com atendimento integrado: o ortopedista e a equipe de fisioterapia no mesmo espaço. Diagnóstico e reabilitação no mesmo lugar.">
+  <meta property="og:title" content="Clínica Eixo · Ortopedia e Fisioterapia">
+  <meta property="og:description" content="Diagnóstico e reabilitação no mesmo lugar. Ortopedista e equipe de fisioterapia trabalhando juntos.">
+  <meta property="og:image" content="https://robsonsantos49.github.io/clinica-eixo/assets/frames/desktop/f_0001.webp">
+  <meta name="theme-color" content="#f5f8fa">
+  <link rel="icon" type="image/png" href="assets/logo/favicon.png">
+  <link rel="apple-touch-icon" href="assets/logo/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/frames/desktop/f_0001.webp">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<header class="topo">
+  <a href="#inicio" class="marca" aria-label="Clínica Eixo, início">
+    <img class="marca-logo" src="assets/logo/logo.webp" alt="" width="40" height="40">
+    <span class="marca-texto">Clínica Eixo</span>
+  </a>
+  <nav class="menu" aria-label="Seções">
+    <a href="#sobre">Sobre</a>
+    <a href="#profissionais">Profissionais</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#artigos">Artigos</a>
+    <a href="#convenios">Convênios</a>
+    <a href="#contato" class="menu-cta">Agendar</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ABERTURA: consultório → porta de vidro → sala de fisioterapia -->
+  <section id="inicio" class="cine" style="--altura: 420vh">
+    <div class="cine-palco">
+      <canvas class="cine-canvas" aria-hidden="true"></canvas>
+      <div class="cine-vinheta"></div>
+
+      <div class="momento momento--primeiro" data-de="0" data-ate="0.28">
+        <div class="texto-abertura">
+          <h1 class="titulo-abertura">Diagnóstico e reabilitação no mesmo lugar.</h1>
+          <p class="apoio">Clínica Eixo · Ortopedia e Fisioterapia</p>
+        </div>
+      </div>
+      <div class="momento momento--direita" data-de="0.36" data-ate="0.64">
+        <div class="texto-abertura">
+          <p class="destaque">O ortopedista que examina você trabalha a poucos passos da equipe que vai tratar você.</p>
+        </div>
+      </div>
+      <div class="momento momento--centro" data-de="0.72" data-ate="1">
+        <div class="texto-abertura">
+          <p class="destaque">Comece pela avaliação.</p>
+          <a href="#contato" class="botao">Agendar avaliação</a>
+        </div>
+      </div>
+
+      <div class="cine-dica" aria-hidden="true"><span></span>role</div>
+    </div>
+  </section>
+
+  <!-- 01 SOBRE: arte à direita -->
+  <section id="sobre" class="secao">
+    <img class="arte arte--direita" src="assets/img/sobre.webp" alt="" loading="lazy">
+    <div class="secao-grade">
+      <div class="painel revelar">
+        <span class="rotulo">01</span>
+        <h2>Do consultório à fisioterapia sem trocar de endereço</h2>
+        <p>Na Clínica Eixo, o médico ortopedista e a equipe de fisioterapia atendem no mesmo espaço. Diagnóstico e plano de reabilitação são combinados entre eles, e você não precisa levar laudo de um lugar para o outro nem repetir sua história a cada profissional.</p>
+        <ol class="passos">
+          <li><strong>Consulta com o ortopedista</strong><span>Exame clínico, leitura dos exames de imagem e diagnóstico.</span></li>
+          <li><strong>Plano combinado</strong><span>Médico e fisioterapeuta definem juntos os objetivos e o ritmo do tratamento.</span></li>
+          <li class="passo--fisio"><strong>Reabilitação aqui mesmo</strong><span>As sessões acontecem na clínica, e o ortopedista acompanha a evolução de perto.</span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 PROFISSIONAIS: arte à esquerda -->
+  <section id="profissionais" class="secao">
+    <img class="arte arte--esquerda" src="assets/img/profissionais.webp" alt="" loading="lazy">
+    <div class="secao-grade secao-grade--direita">
+      <div class="painel revelar">
+        <span class="rotulo">02</span>
+        <h2>Uma equipe que conversa</h2>
+        <p>Ortopedistas e fisioterapeutas discutem cada caso juntos. Quando a dor muda ou o tratamento precisa de ajuste, a decisão sai na hora, entre quem diagnosticou e quem está tratando.</p>
+        <div class="areas">
+          <div>
+            <h3>Ortopedia</h3>
+            <p>Avaliação de dores e lesões em ossos, articulações, músculos e tendões, diagnóstico e indicação do tratamento.</p>
+          </div>
+          <div class="area--fisio">
+            <h3>Fisioterapia</h3>
+            <p>Reabilitação com exercícios orientados e recursos terapêuticos, ajustada a cada etapa da recuperação.</p>
+          </div>
+        </div>
+        <!-- EXEMPLO: equipe fictícia. Trocar por nomes, registros e fotos reais.
+             Com foto: troque o <span class="equipe-foto">XX</span> por
+             <img src="assets/equipe/nome.webp" alt="Foto de Nome" class="equipe-foto"> -->
+        <ul class="equipe">
+          <li>
+            <span class="equipe-foto" aria-hidden="true">RM</span>
+            <strong>Dr. Rafael Moreira</strong>
+            <span>Ortopedista<br><span class="reg">CRM-PR 00000</span> · <span class="reg">RQE 0000</span></span>
+          </li>
+          <li>
+            <span class="equipe-foto" aria-hidden="true">CD</span>
+            <strong>Dra. Camila Duarte</strong>
+            <span>Ortopedista<br><span class="reg">CRM-PR 00000</span> · <span class="reg">RQE 0000</span></span>
+          </li>
+          <li class="equipe--fisio">
+            <span class="equipe-foto" aria-hidden="true">AP</span>
+            <strong>Ana Luísa Prado</strong>
+            <span>Fisioterapeuta<br><span class="reg">CREFITO-8 000000-F</span></span>
+          </li>
+          <li class="equipe--fisio">
+            <span class="equipe-foto" aria-hidden="true">TN</span>
+            <strong>Thiago Nunes</strong>
+            <span>Fisioterapeuta<br><span class="reg">CREFITO-8 000000-F</span></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 SERVIÇOS: arte de fundo + cartões -->
+  <section id="servicos" class="secao secao--larga">
+    <img class="arte arte--fundo" src="assets/img/servicos.webp" alt="" loading="lazy">
+    <div class="painel painel--cabecalho revelar">
+      <span class="rotulo">03</span>
+      <h2>O que você encontra aqui</h2>
+    </div>
+    <div class="cartoes">
+      <article class="painel cartao revelar">
+        <h3>Consulta ortopédica</h3>
+        <p>Para dores na coluna, no joelho, no ombro, no quadril, no tornozelo e nas mãos, e para lesões do esporte e do trabalho.</p>
+      </article>
+      <article class="painel cartao cartao--fisio revelar">
+        <h3>Fisioterapia ortopédica</h3>
+        <p>Sessões para recuperar movimento, força e confiança depois de uma lesão, de uma cirurgia ou de muito tempo convivendo com dor.</p>
+      </article>
+      <article class="painel cartao revelar">
+        <h3>Acompanhamento integrado</h3>
+        <p>Retornos com o ortopedista durante a fisioterapia, para medir a evolução e decidir a alta com segurança.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 04 ARTIGOS: arte à direita -->
+  <section id="artigos" class="secao">
+    <img class="arte arte--direita" src="assets/img/artigos.webp" alt="" loading="lazy">
+    <div class="secao-grade">
+      <div class="painel revelar">
+        <span class="rotulo">04</span>
+        <h2>Para ler antes da consulta</h2>
+        <div class="artigos">
+          <details>
+            <summary>Dor no joelho ao subir escadas: quando investigar</summary>
+            <p>Dor na frente do joelho ao subir escadas, agachar ou passar muito tempo sentado é comum e muitas vezes envolve a articulação entre a patela e o fêmur. Se a dor dura mais de algumas semanas, ou se o joelho incha, trava ou falha, vale uma avaliação ortopédica. Na maioria dos casos o tratamento passa por fortalecimento e ajuste de carga, com fisioterapia.</p>
+          </details>
+          <details>
+            <summary>Entorse de tornozelo não se resolve só com repouso</summary>
+            <p>Nos primeiros dias, proteger, elevar e aplicar gelo ajuda. Mas a recuperação completa depende de devolver equilíbrio e força aos músculos em volta do tornozelo, e quem pula essa etapa tem mais chance de torcer de novo. Procure atendimento se não conseguir apoiar o pé, se houver dor forte sobre o osso ou se o inchaço não diminuir.</p>
+          </details>
+          <details>
+            <summary>Dor nas costas: movimento costuma ajudar mais que repouso</summary>
+            <p>Na maior parte das dores lombares, ficar muitos dias de repouso atrasa a melhora. Manter-se ativo dentro do limite da dor e fazer exercícios orientados costuma dar resultado melhor. Procure avaliação logo se a dor vier com formigamento ou fraqueza nas pernas, febre, perda de controle da urina ou depois de uma queda.</p>
+          </details>
+        </div>
+        <p class="nota">Conteúdo informativo. Não substitui a consulta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 DEPOIMENTOS
+       EXEMPLO: depoimentos fictícios, só para a demonstração. Antes de publicar,
+       trocar por depoimentos reais e autorizados pelos pacientes, ou remover a seção. -->
+  <section id="depoimentos" class="secao secao--larga">
+    <div class="painel painel--cabecalho revelar">
+      <span class="rotulo">05</span>
+      <h2>Quem passou por aqui</h2>
+    </div>
+    <div class="cartoes">
+      <figure class="painel cartao depoimento revelar">
+        <blockquote>Fiz a consulta e comecei a fisioterapia na mesma semana, no mesmo prédio. Não precisei ficar levando exame de um lugar para outro.</blockquote>
+        <figcaption>Marina S. · tratamento de joelho</figcaption>
+      </figure>
+      <figure class="painel cartao depoimento revelar">
+        <blockquote>O médico e a fisioterapeuta conversavam sobre o meu caso. Quando precisei mudar os exercícios, ajustaram no mesmo dia.</blockquote>
+        <figcaption>Carlos A. · pós-operatório de ombro</figcaption>
+      </figure>
+      <figure class="painel cartao depoimento revelar">
+        <blockquote>Atendimento pontual e explicações claras. Eu sabia o que estava fazendo em cada sessão e por quê.</blockquote>
+        <figcaption>Juliana R. · dor lombar</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 06 CONVÊNIOS: painel simples -->
+  <section id="convenios" class="secao secao--curta">
+    <div class="painel painel--centro revelar">
+      <span class="rotulo">06</span>
+      <h2>Convênios</h2>
+      <!-- EXEMPLO: lista fictícia. Trocar pelos planos que a clínica aceita de verdade. -->
+      <ul class="convenios">
+        <li>Unimed</li>
+        <li>Amil</li>
+        <li>Bradesco Saúde</li>
+        <li>SulAmérica</li>
+        <li>Paraná Clínicas</li>
+        <li>Particular</li>
+      </ul>
+      <p>Seu plano não está na lista? Mande o nome pelo WhatsApp e confirmamos a cobertura para consulta e fisioterapia.</p>
+      <a class="botao botao--fisio" data-whats data-msg="Olá! Gostaria de saber se a Clínica Eixo atende o meu plano de saúde." target="_blank" rel="noopener">Consultar meu plano</a>
+    </div>
+  </section>
+
+  <!-- 06 CONTATO -->
+  <section id="contato" class="secao secao--contato">
+    <img class="arte arte--fundo arte--suave" src="assets/img/contato.webp" alt="" loading="lazy">
+    <div class="painel painel--form revelar">
+      <span class="rotulo">07</span>
+      <h2>Agende sua avaliação</h2>
+      <p>Deixe seu contato e conte rapidamente o que está sentindo. Retornamos para combinar o melhor horário.</p>
+      <!-- EXEMPLO: endereço e horário fictícios. Trocar pelos dados reais. -->
+      <dl class="info">
+        <div><dt>Endereço</dt><dd>Rua Exemplo, 123 · Centro · Curitiba/PR</dd></div>
+        <div><dt>Horário</dt><dd>Seg a sex, 7h às 20h · Sáb, 8h às 12h</dd></div>
+      </dl>
+      <form class="form" novalidate>
+        <div class="campo">
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" name="nome" autocomplete="name" required>
+        </div>
+        <div class="campo">
+          <label for="f-email">E-mail</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="campo">
+          <label for="f-tel">WhatsApp</label>
+          <input id="f-tel" name="telefone" type="tel" autocomplete="tel" inputmode="tel" required>
+        </div>
+        <div class="campo">
+          <label for="f-plano">Convênio (se tiver)</label>
+          <input id="f-plano" name="convenio" autocomplete="off">
+        </div>
+        <div class="campo campo--inteiro">
+          <label for="f-msg">Onde dói e há quanto tempo?</label>
+          <textarea id="f-msg" name="mensagem" rows="4"></textarea>
+        </div>
+        <input type="text" name="_honey" class="pote" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="botao campo--inteiro">Enviar</button>
+        <p class="form-status campo--inteiro" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="painel rodape-painel">
+    <span class="marca"><img class="marca-logo" src="assets/logo/logo.webp" alt="" width="32" height="32" loading="lazy"><span class="marca-texto">Clínica Eixo</span></span>
+    <span>Ortopedia e Fisioterapia</span>
+    <!-- EXEMPLO: diretor técnico fictício. Exigido em publicidade médica; trocar pelo nome e CRM reais. -->
+    <span>Diretor técnico: Dr. Rafael Moreira · CRM-PR 00000 · RQE 0000</span>
+    <span>Rua Exemplo, 123 · Centro · Curitiba/PR</span>
+    <span>© <span data-ano></span> Clínica Eixo</span>
+    <span class="aviso-modelo">Site-modelo · clínica, profissionais, depoimentos e dados fictícios</span>
+  </div>
+</footer>
+
+<a class="whats" target="_blank" rel="noopener" aria-label="Conversar no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C9 3 3.3 8.6 3.3 15.6c0 2.4.7 4.7 1.9 6.7L3 29l6.9-2.1c1.9 1 4 1.6 6.1 1.6 7 0 12.7-5.6 12.7-12.6S23 3 16 3Zm0 23.1c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.1 1.2 1.3-4-.3-.4a10.4 10.4 0 0 1-1.6-5.6C5.5 9.8 10.2 5.2 16 5.2s10.5 4.6 10.5 10.4S21.8 26.1 16 26.1Zm5.8-7.8c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4Z"/></svg>
+</a>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
