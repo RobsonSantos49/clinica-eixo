@@ -70,7 +70,16 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .menu a:hover { color: var(--acento); }
 .menu .menu-cta { border: 1.5px solid var(--acento); color: var(--acento); background: rgb(255 255 255 / .55); padding: 9px 16px; border-radius: 999px; text-shadow: none; }
 .menu .menu-cta:hover { background: var(--acento); color: var(--acento-texto); }
-@media (max-width: 760px) { .menu a:not(.menu-cta) { display: none; } }
+@media (max-width: 760px) { .menu { gap: 18px; } .menu a:not(.menu-cta):not(.menu-inicio) { display: none; } }
+.marca-texto { white-space: nowrap; }
+@media (max-width: 380px) {
+  .topo { gap: 10px; }
+  .menu { gap: 12px; font-size: 13px; }
+  .marca { gap: 8px; }
+  .topo .marca-logo { height: 32px; }
+  .topo .marca-texto { font-size: 20px; }
+  .menu .menu-cta { padding: 8px 12px; }
+}
 
 /* ── Abertura cinematográfica ──────────────────────────────────────────── */
 .cine { position: relative; height: var(--altura, 400vh); }
