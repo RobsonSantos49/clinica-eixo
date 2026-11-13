@@ -349,9 +349,23 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
   .secao { padding: 14vh var(--gutter); min-height: auto; }
   .secao-grade, .secao-grade--direita { grid-template-columns: 1fr; }
   .secao-grade--direita > .painel { grid-column: 1; }
-  .arte--direita, .arte--esquerda { left: 0; right: 0; width: 100%; height: 70%; opacity: .55;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 55%, transparent);
-            mask-image: linear-gradient(to bottom, transparent, #000 25%, #000 55%, transparent); }
+  /* Celular: a arte vira uma faixa visível acima do painel, dissolvendo no fundo (sem moldura) */
+  .secao:has(> .arte) { padding-top: 0; }
+  .secao > .arte {
+    position: relative; inset: auto; z-index: -1;
+    width: calc(100% + 2 * var(--gutter)); max-width: none; margin-inline: calc(-1 * var(--gutter));
+    height: auto; aspect-ratio: 4 / 3; max-height: 52svh; opacity: 1; justify-self: stretch;
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
+            mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 72%, transparent 100%);
+  }
+  /* enquadra o assunto de cada imagem */
+  #sobre > .arte { object-position: 80% 50%; }
+  #profissionais > .arte { object-position: 25% 50%; }
+  #servicos > .arte { object-position: 50% 50%; }
+  #artigos > .arte { object-position: 66% 50%; }
+  #contato > .arte { object-position: 50% 50%; }
+  .secao > .arte + * { margin-top: -44px; }
+  .secao--larga > .arte + * { margin-top: -72px; }
   .momento, .momento--direita { left: var(--gutter); right: var(--gutter); bottom: 18vh; }
   .momento--centro { width: auto; max-width: none; transform: translateY(24px); }
   .momento--centro.ativo { transform: none; }
