@@ -6,6 +6,9 @@ window.SITE = {
     mensagem: "Olá! Gostaria de agendar uma avaliação na Clínica Eixo.",
   },
 
+  // Endereço usado nos botões "Abrir no Google Maps" e "Waze". EXEMPLO: trocar pelo endereço real.
+  endereco: "Rua Exemplo, 123 - Centro, Curitiba - PR",
+
   contato: {
     // E-mail que recebe o formulário (FormSubmit). Depois da ativação, o FormSubmit manda
     // um código aleatório: coloque o código aqui no lugar do e-mail, e o e-mail some do site.
@@ -24,7 +27,7 @@ window.SITE = {
   },
 
   frames: {
-    total: 160, // valor impresso pelo fatiar_frames.sh
+    total: 120, // computador: 1600x900, 15 quadros por segundo de vídeo
     totalMobile: 80, // celular: quadros verticais 540x960, um a cada dois
     desktop: "assets/frames/desktop/f_{n}.webp",
     mobile: "assets/frames/mobile/f_{n}.webp",

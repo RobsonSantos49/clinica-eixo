@@ -268,6 +268,20 @@ p { margin: 0 0 1em; color: var(--texto-suave); text-wrap: pretty; }
 .info dt { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--acento); margin-bottom: 4px; }
 .info dd { margin: 0; color: var(--texto); }
 @media (max-width: 640px) { .info { grid-template-columns: 1fr; } }
+.rotas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.rotas a {
+  font-size: 13px; font-weight: 500; text-decoration: none; color: var(--acento);
+  padding: 7px 14px; border: 1px solid color-mix(in srgb, var(--acento) 35%, transparent); border-radius: 999px;
+  transition: background .3s, color .3s;
+}
+.rotas a:hover { background: var(--acento); color: var(--acento-texto); }
+
+/* Dúvidas */
+.painel--duvidas { width: 100%; max-width: 760px; }
+.painel--duvidas .nota a { color: var(--fisio); font-weight: 600; }
+
+/* Depois do envio: seguir pelo WhatsApp */
+.form-whats[hidden] { display: none; }
 
 /* ── Arte: imagens fundidas ao fundo (nunca retângulo com borda) ───────── */
 .arte {

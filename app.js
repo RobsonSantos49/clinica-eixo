@@ -166,11 +166,21 @@
     else a.closest("li").remove();
   });
 
+  /* ── Como chegar (endereço no config.js) ──────────────────────────────── */
+  document.querySelectorAll("[data-rota]").forEach((a) => {
+    const end = encodeURIComponent(S.endereco || "");
+    if (!end) return a.closest(".rotas").remove();
+    a.href = a.dataset.rota === "waze"
+      ? `https://waze.com/ul?q=${end}&navigate=yes`
+      : `https://www.google.com/maps/search/?api=1&query=${end}`;
+  });
+
   /* ── Formulário → e-mail ──────────────────────────────────────────────── */
   const form = document.querySelector(".form");
   if (form && S.contato) {
     const status = form.querySelector(".form-status");
     const botao = form.querySelector("button[type=submit]");
+    const continuar = form.querySelector(".form-whats");
     const avisar = (txt, tipo) => { status.textContent = txt; status.className = `form-status campo--inteiro ${tipo || ""}`; };
 
     const abertoEm = Date.now();
@@ -189,6 +199,17 @@
 
       const dados = Object.fromEntries(new FormData(form));
       delete dados._honey;
+
+      // Depois do envio (deu certo ou não), oferece seguir pelo WhatsApp com a mensagem já escrita
+      const seguirNoWhats = () => {
+        if (!continuar || !S.whatsapp) return;
+        const num = String(S.whatsapp.numero || "").replace(/\D/g, "");
+        const nome = dados.nome.trim().split(/\s+/)[0];
+        let msg = `Olá! Sou ${nome} e acabei de enviar o formulário do site da ${S.nome || "clínica"} para agendar uma avaliação.`;
+        if (dados.mensagem && dados.mensagem.trim()) msg += ` Sobre o que estou sentindo: ${dados.mensagem.trim().slice(0, 300)}`;
+        continuar.href = `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+        continuar.hidden = false;
+      };
       const assunto = S.contato.assunto || `Novo contato pelo site ${S.nome || ""}`;
       let url, corpo;
       if (S.contato.web3formsChave) {
@@ -210,10 +231,12 @@
         const j = await r.json().catch(() => ({}));
         if (!r.ok || j.success === false || j.success === "false") throw new Error(j.message || r.status);
         form.reset();
-        avisar("Recebemos seu contato. Em breve falamos com você.", "ok");
+        avisar("Recebemos seu contato. Em breve falamos com você. Se quiser agilizar, continue pelo WhatsApp:", "ok");
+        seguirNoWhats();
       } catch (e) {
         console.warn("Falha no envio do formulário:", e);
-        avisar("Não foi possível enviar agora. Chame a gente no WhatsApp.", "falha");
+        avisar("Não foi possível enviar agora. Seus dados não se perderam: mande pelo WhatsApp.", "falha");
+        seguirNoWhats();
       } finally {
         botao.disabled = false;
       }

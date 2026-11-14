@@ -1,4 +1,4 @@
-{ "total": 160, "largura": 1920, "altura": 1080,
+{ "total": 120, "largura": 1600, "altura": 900,
   "desktop": "assets/frames/desktop/f_{n}.webp",
   "mobile": "assets/frames/mobile/f_{n}.webp",
   "total_mobile": 80, "largura_mobile": 540, "altura_mobile": 960 }
