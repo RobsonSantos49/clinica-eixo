@@ -153,6 +153,12 @@
     });
   }
 
+  /* ── Proteção das imagens: bloqueia botão direito e arrastar ──────────── */
+  const ehImagem = (el) => el instanceof Element && el.closest("img, canvas, .cine-vinheta");
+  document.addEventListener("contextmenu", (e) => { if (ehImagem(e.target)) e.preventDefault(); });
+  document.addEventListener("dragstart", (e) => { if (ehImagem(e.target)) e.preventDefault(); });
+  document.querySelectorAll("img").forEach((img) => img.setAttribute("draggable", "false"));
+
   /* ── Redes sociais (endereços no config.js) ───────────────────────────── */
   document.querySelectorAll("[data-rede]").forEach((a) => {
     const url = (S.redes || {})[a.dataset.rede];
@@ -167,16 +173,19 @@
     const botao = form.querySelector("button[type=submit]");
     const avisar = (txt, tipo) => { status.textContent = txt; status.className = `form-status campo--inteiro ${tipo || ""}`; };
 
+    const abertoEm = Date.now();
     form.addEventListener("submit", async (ev) => {
       ev.preventDefault();
-      if (form.elements._honey.value) return; // robô
+      if (form.elements._honey.value) return; // robô: preencheu o campo invisível
+      if (Date.now() - abertoEm < 4000) return; // robô: enviou segundos depois de abrir a página
       let valido = true;
       form.querySelectorAll("[required]").forEach((c) => {
-        const ok = c.type === "email" ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.value) : c.value.trim().length > 1;
-        c.closest(".campo").classList.toggle("erro", !ok);
+        const ok = c.type === "checkbox" ? c.checked
+          : c.type === "email" ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(c.value) : c.value.trim().length > 1;
+        c.closest(".campo, .consentimento").classList.toggle("erro", !ok);
         if (!ok) valido = false;
       });
-      if (!valido) return avisar("Confira os campos destacados.", "falha");
+      if (!valido) return avisar("Confira os campos destacados e a autorização de uso dos dados.", "falha");
 
       const dados = Object.fromEntries(new FormData(form));
       delete dados._honey;

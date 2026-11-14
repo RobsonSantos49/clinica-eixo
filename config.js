@@ -7,6 +7,8 @@ window.SITE = {
   },
 
   contato: {
+    // E-mail que recebe o formulário (FormSubmit). Depois da ativação, o FormSubmit manda
+    // um código aleatório: coloque o código aqui no lugar do e-mail, e o e-mail some do site.
     email: "contato@exemplo.com",
     // Opcional: chave do Web3Forms (https://web3forms.com). Se vazio, usa FormSubmit.
     web3formsChave: "",
