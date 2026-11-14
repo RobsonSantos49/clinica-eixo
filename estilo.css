@@ -1,6 +1,7 @@
 
 /* ── Tokens: ajuste pela identidade visual do cliente ───────────────────── */
 :root {
+  color-scheme: only light; /* não deixa o modo escuro do celular inverter as cores */
   --fundo: #f5f8fa;          /* MESMA cor usada nos prompts das imagens */
   --fundo-2: #e9f0f4;
   --texto: #10283f;
@@ -22,6 +23,7 @@
 }
 /* Tema claro (marcas de luz, saúde, casamento etc.): troque os tokens assim
 :root {
+  color-scheme: only light; /* não deixa o modo escuro do celular inverter as cores */
   --fundo: #f4efe7; --fundo-2: #ebe4d8; --texto: #1d1a16; --texto-suave: #5d564c;
   --linha: rgb(29 26 22 / .12); --painel: rgb(244 239 231 / .7); --mistura: multiply;
 }
